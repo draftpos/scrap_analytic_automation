@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add Analytic Distribution to Journal Entries Tree View -->
+    <record id="view_account_move_tree_analytic" model="ir.ui.view">
+        <field name="name">account.move.tree.analytic</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="analytic_distribution" widget="analytic_distribution" groups="analytic.group_analytic_accounting" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
